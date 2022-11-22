@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExampleComponent } from './example/example.component';
 
 const routes: Routes = [
   {
-    path: '', //TODO: localhost:4200/ <----
-    component: ExampleComponent
-
-  },
-  {
-    path: 'hello', //TODO: localhost:4200/ <----
-    component: ExampleComponent
-
+    path:'', //TODO: http://localhost:4200/home <---- ruta raiz
+    loadChildren:() => import( `./modules/home/home.module` ).then( m => m.HomeModule )
   }
 ];
 
